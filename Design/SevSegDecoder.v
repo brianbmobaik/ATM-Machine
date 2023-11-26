@@ -20,8 +20,8 @@ module SevSegDecoder (
     );
 
     // Common Anode
-    always @ (LED_BCD) begin
-        case (LED_BCD)
+    always @ ( LED_BCD ) begin
+        case ( LED_BCD )
         4'b0000: LED_out = 7'b0000001; // 0
         4'b0001: LED_out = 7'b1001111; // 1
         4'b0010: LED_out = 7'b0010010; // 2
@@ -41,8 +41,7 @@ module SevSegDecoder (
         4'b1110: LED_out = 7'b0110000; // E
         4'b1111: LED_out = 7'b0111000; // F
 
-        // Default to OFF
-        default: LED_out = 7'b1111111;
+        default: LED_out = 7'b1111111; // OFF
         endcase;
     end
 endmodule
