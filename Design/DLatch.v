@@ -1,17 +1,17 @@
 `timescale 1ns / 1ps
 
-// 1-Bit D-Latch
-module DLatch (
+// N-Bit D-Latch
+module DLatch #(parameter WIDTH = 1) (
     input wire en, rst,
-    input wire dataIn,
-    output reg dataOut
+    input wire [WIDTH-1:0] dataIn,
+    output reg [WIDTH-1:0] dataOut
     );
 
     always @( en or rst or dataIn ) begin
-        if( rst == 1'b1 ) begin
-            dataOut <= 1'b0;
+        if ( rst ) begin
+            dataOut <= 0;
         end else begin
-            if( en == 1'b1 ) begin
+            if ( en ) begin
                 dataOut <= dataIn;
             end
         end

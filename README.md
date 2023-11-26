@@ -4,6 +4,11 @@
 
 ## Functionalities
 
+- Enter user pin combinations to access
 - Able to Withdraw/Deposit Money
-- Also maybe a pin/pwd for each unique user
-- Idk anything else we can add
+- Able to See Current Balance
+- 
+
+## Hardwares
+
+- 

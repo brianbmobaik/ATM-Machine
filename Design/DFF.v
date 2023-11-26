@@ -1,11 +1,11 @@
 `timescale 1ns / 1ps
 
-// 1-Bit DFF
-module DFF(
+// N-Bit DFF (Default to 1-Bit)
+module DFF #(parameter WIDTH = 1)(
     input wire clk, reset,
     input wire en,
-    input wire d,
-    output reg q
+    input wire [WIDTH-1:0] d,
+    output reg [WIDTH-1:0] q
     );
     
     always @(posedge clk, posedge reset)
