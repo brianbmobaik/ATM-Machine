@@ -4,16 +4,16 @@
 module DFF #(parameter WIDTH = 1)(
     input wire clk, rst,
     input wire en,
-    input wire [WIDTH-1:0] dataIn,
-    output reg [WIDTH-1:0] dataOut
+    input wire [WIDTH-1:0] data_in,
+    output reg [WIDTH-1:0] data_out
     );
     
     always @ ( posedge(clk) or posedge(rst) )
         if ( rst ) begin
-            dataOut <= 0;
+            data_out <= 0;
         end else if ( clk ) begin
             if ( en ) begin
-                dataOut <= dataIn;
-            end
+                data_out <= data_in;
+            end 
         end
 endmodule
