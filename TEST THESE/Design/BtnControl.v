@@ -3,7 +3,8 @@
 module BtnControl (
     input clk, rst,
     input [4:0] btn_i,
-    output [31:0] data_o
+    output [31:0] data_o,
+    // output flag
     );
     
     wire [4:0] btn_db;
@@ -36,6 +37,7 @@ module BtnControl (
         end
     end    
     
+    // assign flag = btn_db[4];
     assign data_o = {data[7], data[6], data[5], data[4],
                      data[3], data[2], data[1], data[0]};
 endmodule
