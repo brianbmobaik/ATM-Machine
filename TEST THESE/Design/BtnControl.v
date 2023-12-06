@@ -38,14 +38,14 @@ module BtnControl (
     
     always @ ( * ) begin
         case ( sel )
-            3'b000 : data_o[ 3: 0] <= data[3:0];
-            3'b001 : data_o[ 7: 4] <= data[3:0];
-            3'b010 : data_o[11: 8] <= data[3:0];
-            3'b011 : data_o[15:12] <= data[3:0];
-            3'b100 : data_o[19:16] <= data[3:0];
-            3'b101 : data_o[23:20] <= data[3:0];
-            3'b110 : data_o[27:24] <= data[3:0];
-            3'b111 : data_o[31:28] <= data[3:0];
+            3'b000 : data_o <= {data_i[31: 4], data[3:0]};
+            3'b001 : data_o <= {data_i[31: 8], data[3:0], data_i[ 3:0]};
+            3'b010 : data_o <= {data_i[31:12], data[3:0], data_i[ 7:0]};
+            3'b011 : data_o <= {data_i[31:16], data[3:0], data_i[11:0]};
+            3'b100 : data_o <= {data_i[31:20], data[3:0], data_i[15:0]};
+            3'b101 : data_o <= {data_i[31:24], data[3:0], data_i[19:0]};
+            3'b110 : data_o <= {data_i[31:27], data[3:0], data_i[23:0]};
+            3'b111 : data_o <= {data[3:0], data_i[27:0]};
         endcase
     end
 endmodule
