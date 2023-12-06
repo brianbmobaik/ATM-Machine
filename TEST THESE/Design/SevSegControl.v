@@ -4,9 +4,9 @@
 module SevSegControl (
     input wire rst,                 // Reset
     input wire [31:0] data_in,      // Input Data
-    input wire [3:0] LED_Select,    // Digit Select
+    input wire [2:0] LED_Select,    // Digit Select
 
-    output reg [3:0] digit_out,     // Output Digit Val
+    output reg [3:0] digit_out,    // Output Digit Val
     output reg [7:0] LED_Control    // Controls 7 Segment Digits
     );
 
