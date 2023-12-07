@@ -4,7 +4,7 @@ module RegFile(
     input clk, rst, we,
     input [3:0] sel,
     input [31:0] data_i,
-    output reg [31:0] data_o
+    output [31:0] data_o
     );
     
     reg [31:0] register [0:15];
@@ -18,9 +18,9 @@ module RegFile(
         end else begin
             if ( we ) begin
                 register[sel] <= data_i;
-            end else begin
-                data_o <= register[sel];
             end
         end
     end
+
+    assign data_o = register[sel];
 endmodule
