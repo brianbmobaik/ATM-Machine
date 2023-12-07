@@ -27,7 +27,7 @@ module Top(
     BCDSample samp (.BCD(btn_data), .data(deci_btn));
     BCDDriver driv1 (.data(reg_data), .BCD(bcd_reg));
     
-    always @ ( posedge rst or posedge clk ) begin
+    always @ ( posedge rst or posedge sclk_1ms ) begin
         if ( rst ) begin
             data <= 0;
             calc_data <= 0;
